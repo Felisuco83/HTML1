@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        // SI QUEREMOS ASOCIAR EVENTOS AL EMPEZAR LA CARGA HACEMOS EL CLASICO
+        var suma = 25;
+        window.onload = function () {
+            var imagenes = document.getElementsByClassName("imagenCambiante");
+            var resultado = document.getElementById("resultado");
+            for (i = 0; i < imagenes.length; i++) {
+                imagenes[i].addEventListener("mouseover", function () {
+                    this.src = "Images/escudo_madrid.jpg";
+                });
+                imagenes[i].addEventListener("mouseout", function () {
+                    this.src = "Images/bandera_españa.jpg";
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1> Cambiar imágenes delegado  </h1>
+    <img src="Images/bandera_españa.jpg" class="imagenCambiante" />
+    <img src="Images/bandera_españa.jpg" class="imagenCambiante" />
+    <img src="Images/bandera_españa.jpg" class="imagenCambiante" />
+    <img src="Images/bandera_españa.jpg" class="imagenCambiante" />
+    <img src="Images/bandera_españa.jpg" class="imagenCambiante" />
+</body>
+</html>

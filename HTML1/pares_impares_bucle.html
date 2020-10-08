@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function ejecutarWhile() {
+            var resultado = document.getElementById("resultado");
+            resultado.innerText = "";
+            var contador = 1;
+            while (contador <= 20) {
+                if (contador % 2 == 0) {
+                    resultado.innerHTML += contador + ",";
+                }
+                contador++;
+            }
+        }
+        function ejecutarFor() {
+            var resultado = document.getElementById("resultado");
+            resultado.innerText = "";
+            for (var i = 1; i <= 20; i++) {
+                if (i % 2 == 1) {
+                    resultado.innerHTML += i + ",";
+                }
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h1>Sintaxis de bucles</h1>
+        <button onclick="ejecutarWhile()"> Ejecutar while</button>
+        <button onclick="ejecutarFor()"> Ejecutar for</button>
+        <br />
+        <h2 id="resultado"></h2>
+    </div>
+</body>
+</html>

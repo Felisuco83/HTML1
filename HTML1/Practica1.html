@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function existeFecha(fecha){
+          var fechaf = fecha.split("/");
+          var day = fechaf[0];
+          var month = fechaf[1];
+          var year = fechaf[2];
+          var date = new Date(year,month,'0');
+          if((day-0)>(date.getDate()-0)){
+                return false;
+          }
+          return true;
+        }
+
+        function validarFormatoFecha(campo) {
+          var RegExPattern = /^\d{1,2}\/\d{1,2}\/\d{2,4}$/;
+          if ((campo.match(RegExPattern)) && (campo!='')) {
+                return true;
+          } else {
+                return false;
+          }
+        }
+        function showWeekDay() {
+            var day = document.getElementById("day").value;
+            var month = document.getElementById("month").value;
+            var year = document.getElementById("year").value;
+
+            var fecha = month + "/" + day + "/" + year;
+            var fechaParseada = new Date(Date.parse(fecha));
+            var diaSemanaNumero = fechaParseada.getDay();
+            if(validarFormatoFecha(fecha)){
+            if(existeFecha(fecha)){
+                alert("La fecha introducida es correcta.");
+                var diaSemanaLetra = "";
+                switch (diaSemanaNumero) {
+                    case 0:
+                        diaSemanaLetra = "Domingo"
+                        break;
+                    case 1:
+                        diaSemanaLetra = "Lunes"
+                        break;
+                    case 2:
+                        diaSemanaLetra = "Martes"
+                        break;
+                    case 3:
+                        diaSemanaLetra = "Miércoles"
+                        break;
+                    case 4:
+                        diaSemanaLetra = "Jueves"
+                        break;
+                    case 5:
+                        diaSemanaLetra = "Viernes"
+                        break;
+                    case 6:
+                        diaSemanaLetra = "Sábado"
+                        break;
+                }
+                document.getElementById("diaSemana").innerText = diaSemanaLetra;
+            }else{
+                alert("La fecha introducida no existe.");
+            }
+            }else{
+                alert("El formato de la fecha es incorrecto.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <label>Día: </label>
+        <input type="number" id="day"/>
+        <label>Mes: </label>
+        <input type="number" id="month"/>
+        <label>Año: </label>
+        <input type="number" id="year"/>
+        <button onclick="showWeekDay()"> Mostrar día de la semana </button>
+        <br />
+        <h2 id="diaSemana"></h2>
+    </div>
+</body>
+</html>

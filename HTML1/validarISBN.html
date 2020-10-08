@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function validarISBN() {
+            var numeros = document.getElementById("isbn").value;
+            var sumatorio = 0;
+            var isValid = false;
+            if (numeros.length == 10) {
+                for (var i = 0; i < numeros.length; i++) {
+                    sumatorio += parseInt(numeros[i]) * (i+1);
+                }
+                if (sumatorio % 11 == 0) {
+                    console.log("el ISBN es válido");
+                    isValid = true;
+                } else {
+                    console.log("el ISBN no es válido");
+                }
+            } else {
+                console.log("debe de contener 10 caracteres");
+            }
+            document.getElementById("resultado").innerText = isValid;
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h1> Validar ISBN  </h1>
+        <input type="text" id="isbn" />
+        <button onclick="validarISBN()"> Validar ISBN </button>
+        <br />
+        <br />
+        <div id="resultado"></div>
+    </div>
+</body>
+</html>

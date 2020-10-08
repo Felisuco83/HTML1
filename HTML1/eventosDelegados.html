@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        // SI QUEREMOS ASOCIAR EVENTOS AL EMPEZAR LA CARGA HACEMOS EL CLASICO
+        window.onload = function () {
+            //addeventlisteners
+        }
+        var contador = 0;
+        function asociarEvento() {
+            contador++;
+            var res = document.getElementById("resultado");
+            res.innerText = "Eventos asociados: " + contador;
+            var boton = document.getElementById("botonaccion");
+            // MODO 1
+            //boton.onclick = mostrarMensaje;
+            //boton.onclick = mostrarMensaje2;
+            // MODO 2 CON ANONIMAS
+            //boton.onclick = function () {
+            //    alert("Anonima 1");
+            //}
+            //boton.onclick = function () {
+            //    alert("Anonima 2" + this);
+            //}
+            //MODO 3 CON LISTENER
+            //boton.addEventListener("click", mostrarMensaje);
+            //boton.addEventListener("click", mostrarMensaje2);
+            // MODO 4, THIS SIEMPRE VA A SER EL BOTON Y EN ESTE CASO LA PILA DE LLAMADAS SE PRODUCE PORQUE NO ENTIENDE QUE ES LA MISMA
+            // FUNCION
+            //boton.addEventListener("click", function () {
+            //    alert("Anonima 1" + this);
+            //});
+            function mostrarMensaje() {
+                alert("Mensaje 1" + this);
+            }
+            function mostrarMensaje2() {
+                alert("Mensaje 2");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1> Eventos delegados JS </h1>
+    <h1 style="color:fuchsia;" id="resultado"></h1>
+    <button type="button" onclick="asociarEvento()"> Asociar eventos </button>
+    <button type="button" id="botonaccion"> Realizar acciones </button>
+</body>
+</html>

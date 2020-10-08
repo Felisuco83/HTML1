@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function verTablas() {
+            var resultado = document.getElementById("resultado");
+            var cadena = "";
+            for (var i = 0; i < 11; i++) {
+                cadena += '<table style="display:inline;" border="1">';
+                for (var j = 0; j < 11; j++) {
+                    cadena += "<tr>";
+                    cadena += "<td>" + i + " * " + j + "</td>";
+                    cadena += "<td>" + i*j + "</td>";
+                    cadena += "</tr>";
+                }
+                cadena += "</table>";
+            }
+            resultado.innerHTML = cadena;
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h1> Tablas de Multiplicar</h1>
+        <button onclick="verTablas()"> Ver tablas </button>
+        <br />
+        <br />
+        <div id="resultado"></div>
+    </div>
+</body>
+</html>

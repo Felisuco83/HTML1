@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function verCollatz() {
+            var numeroInicial = document.getElementById("numero").value;
+            var resultado = document.getElementById("resultado");
+            var cadena = numeroInicial + "<br/>";
+            while (numeroInicial != 1) {
+                if (numeroInicial%2 == 0) {
+                    numeroInicial = numeroInicial / 2;
+                } else {
+                    numeroInicial = numeroInicial * 3 + 1; 
+                }
+                cadena += numeroInicial + "<br/>";
+            }
+            resultado.innerHTML = cadena;
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h1> Secuencia de Collatz</h1>
+        <button onclick="verCollatz()"> Ver secuencia </button>
+        <br />
+        <div id="resultado"></div>
+    </div>
+</body>
+</html>

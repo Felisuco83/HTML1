@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function sumarNumeros() {
+            var resultado = document.getElementById("resultado");
+            //resultado.innerHTML = "<h5>Titulo peke </h5>";
+            var cajanum1Val = document.getElementById("cajanum1").value
+            var cajanum2Val = document.getElementById("cajanum2").value;
+            resultado.innerText = parseInt(cajanum1Val) + parseInt(cajanum2Val);
+        }
+
+        function cambiarImagen(img) {
+            //document.getElementById("imagen1").src = "Images/bandera_españa.jpg";
+            img.src = "Images/bandera_españa.jpg";
+        }
+
+        function evaluar() {
+            var numerito = parseInt(document.getElementById("cajaestacion").value);
+            var resultado = document.getElementById("resultado");
+            switch (numerito) {
+                case 1:
+                    resultado.innerText = "Verano";
+                    break;
+                case 2:
+                    resultado.innerText = "Otoño";
+                    break;
+                case 1:
+                    resultado.innerText = "Invierno";
+                    break;
+                case 1:
+                    resultado.innerText = "Ptrimavera";
+                    break;
+                default:
+                    resultado.innerText = "No hay estaciones";
+            }
+
+        }
+    </script>
+></head>
+<body>
+    <h1>Sumar números</h1>
+    <label> Número 1-4: </label>
+    <input type="number" id="cajaestacion" />
+    <button type="button" onclick="evaluar()"> Evaluar </button>
+    <img src="Images/escudo_madrid.jpg" id="imagen1" width="7%" height="120px" onmouseover="cambiarImagen(this)" />
+    <br />
+    <label>Número 1</label>
+    <input type="number" id="cajanum1" />
+    <br />
+    <label>Número 2</label>
+    <input type="number" id="cajanum2" />
+    <br />
+    <button type="button" onclick="sumarNumeros()"> Sumar números</button>
+    <h1 id="resultado"></h1>
+</body>
+</html>

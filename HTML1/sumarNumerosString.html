@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function sumarNumeros() {
+            var numeros = document.getElementById("numeros").value;
+            var sumatorio = 0;
+            for (var i = 0; i < numeros.length; i++) {
+                sumatorio += parseInt(numeros[i]);
+            }
+            document.getElementById("resultado").innerText = sumatorio;
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h1> Sumar números  </h1>
+        <input type="text" id="numeros" />
+        <button onclick="sumarNumeros()"> Sumar números </button>
+        <br />
+        <br />
+        <div id="resultado"></div>
+    </div>
+</body>
+</html>

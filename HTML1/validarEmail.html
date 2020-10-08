@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function validateEmail() {
+            //arroba ni al principio ni al final, que exista una arroba pero sólo una
+            //Exista un punto después de la @
+            //Dominio de 2 a 4 caracteres
+            var email = document.getElementById("email").value;
+            var indexOfAt = email.indexOf("@");
+            if (indexOfAt == -1) {
+                console.log("no hay arroba");
+            } else {
+                if (email.indexOf("@", indexOfAt + 1) != -1) {
+                    console.log("Hay más de una arroba");
+                }
+                if (email.startsWith("@")) {
+                    console.log("No puede empezar por arroba");
+                }
+                if (email.endsWith("@")) {
+                    console.log("No puede acabar por arroba");
+                }
+                var indexOfStop = email.indexOf('.');
+                if (email.indexOf(".", indexOfAt + 1) == -1) {
+                    console.log("no hay ningún punto después de la arroba")
+                } else {
+                    if (email.startsWith(".")) {
+                        console.log("No puede empezar por punto");
+                    }
+                    if (email.endsWith(".")) {
+                        console.log("No puede acabar por punto");
+                    }
+                    if (email.indexOf(".", indexOfStop + 1) != -1) {
+                        console.log("hay mas de un punto");
+                    } else {
+                        if (email.substr(indexOfStop +1 , email.length).length < 2 || email.substring(indexOfStop +1 , email.length).length > 4) {
+                        console.log("el nombre del dominio debe ser entre 2 y cuatro caracteres");
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h1> Validar email </h1>
+        <input type="text" id="email" />
+        <button onclick="validateEmail()"> Ver tablas </button>
+        <br />
+        <br />
+        <div id="resultado"></div>
+    </div>
+</body>
+</html>

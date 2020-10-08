@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function validarDNI() {
+            var dni = document.getElementById("dni").value;
+            var resultado = "";
+            if (dni.length == 0) {
+                resultado = "el dni esta vacío";
+            } else {
+                var letra = dni.substr(-1).toUpperCase();
+                var numero = dni.substr(0,dni.length - 1);
+                var resto = numero % 23;
+                var correcto = true;
+                switch (resto) {
+                    case 0:
+                        if (letra == "T")
+                            console.log("el dni es correcto");
+                        else
+                            console.log("el dni no es correcto");
+                        break;
+                    case 1:
+                        if (letra == "R")
+                            console.log("el dni es correcto");
+                        else
+                            console.log("el dni no es correcto");
+                        break;
+                    case 2:
+                        if (letra == "W")
+                            console.log("el dni es correcto");
+                        else
+                            console.log("el dni no es correcto");
+                        break;
+                    case 3:
+                        if (letra == "A")
+                            console.log("el dni es correcto");
+                        else
+                            console.log("el dni no es correcto");
+                        break;
+                    case 4:
+                        if (letra == "G")
+                            console.log("el dni es correcto");
+                        else
+                            console.log("el dni no es correcto");
+                        break;
+                    case 5:
+                        if (letra == "M")
+                            console.log("el dni es correcto");
+                        else
+                            console.log("el dni no es correcto");
+                        break;
+                    case 6:
+                        if (letra == "Y")
+                            console.log("el dni es correcto");
+                        else
+                            console.log("el dni no es correcto");
+                        break;
+                    case 7:
+                        if (letra == "F")
+                            console.log("el dni es correcto");
+                        else
+                            console.log("el dni no es correcto");
+                        break;
+                    case 8:
+                        if (letra == "P")
+                            console.log("el dni es correcto");
+                        else
+                            console.log("el dni no es correcto");
+                        break;
+                    case 9:
+                        if (letra == "F")
+                            console.log("el dni es correcto");
+                        else
+                            console.log("el dni no es correcto");
+                        break;
+                    case 10:
+                        if (letra == "X")
+                            console.log("el dni es correcto");
+                        else
+                            console.log("el dni no es correcto");
+                        break;
+                    case 11:
+                        if (letra == "B")
+                            console.log("el dni es correcto");
+                        else
+                            console.log("el dni no es correcto");
+                        break;
+                    case 12:
+                        if (letra == "N")
+                            console.log("el dni es correcto");
+                        else
+                            console.log("el dni no es correcto");
+                        break;
+                    case 13:
+                        if (letra == "J")
+                            console.log("el dni es correcto");
+                        else
+                            console.log("el dni no es correcto");
+                        break;
+                    case 14:
+                        if (letra == "Z")
+                            console.log("el dni es correcto");
+                        else
+                            console.log("el dni no es correcto");
+                        break;
+                    case 15:
+                        if (letra == "S")
+                            console.log("el dni es correcto");
+                        else
+                            console.log("el dni no es correcto");
+                        break;
+                    case 16:
+                        if (letra == "Q")
+                            console.log("el dni es correcto");
+                        else
+                            console.log("el dni no es correcto");
+                        break;
+                    case 17:
+                        if (letra == "V")
+                            console.log("el dni es correcto");
+                        else
+                            console.log("el dni no es correcto");
+                        break;
+                    case 18:
+                        if (letra == "H")
+                            console.log("el dni es correcto");
+                        else
+                            console.log("el dni no es correcto");
+                        break;
+                    case 19:
+                        if (letra == "L")
+                            console.log("el dni es correcto");
+                        else
+                            console.log("el dni no es correcto");
+                        break;
+                    case 20:
+                        if (letra == "C")
+                            console.log("el dni es correcto");
+                        else
+                            console.log("el dni no es correcto");
+                        break;
+                    case 21:
+                        if (letra == "K")
+                            console.log("el dni es correcto");
+                        else
+                            console.log("el dni no es correcto");
+                        break;
+                    case 22:
+                        if (letra == "E")
+                            console.log("el dni es correcto");
+                        else
+                            console.log("el dni no es correcto");
+                        break;
+                }
+            }
+            document.getElementById("resultado").innerText = resultado;
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h1> Validar DNI  </h1>
+        <input type="text" id="dni" />
+        <button onclick="validarDNI()"> Validar DNI </button>
+        <br />
+        <br />
+        <div id="resultado"></div>
+    </div>
+</body>
+</html>
+
+<!--Realizar una aplicación para conocer la letra del Documento Nacional de Identidad a través del número de DNI.
+
+Debe asegurarse de que en la caja DNI que no esté vacía.
+
+Cambiaremos el color de la caja a rojo si no ha escrito nada y en blanco y está correcto al pulsar el botón.
+
+La fórmula para calcular la letra del número del DNI se halla de la siguiente forma:
+
+
+
+(nº DNI - (ENTERO(nº DNI / 23) * 23))
+
+
+
+Se mira la equivalencia en la siguiente tabla
+
+
+
+0=T 4=G 8=P 12=N 16=Q 20=C 1=R 5=M 9=D 13=J 17=V 21=K 2=W 6=Y 10=X 14=Z 18=H 22=E 3=A 7=F 11=B 15=S 19=L 23=T
+
+-->
