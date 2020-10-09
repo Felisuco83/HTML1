@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var sumatorio = 0;
+            var range = document.getElementById("range");
+            range.addEventListener("change", function () {
+                sumatorio = 0;
+                document.getElementById("resultado").innerText = "";
+                var contenedor = document.getElementById("contenedorChk");
+                contenedor.innerHTML = "";
+                contenedor.innerHTML = "<br/>";
+                var rangeVal = document.getElementById("rangeVal");
+                rangeVal.innerText = this.value;
+                for (var i = 0; i < this.value; i++) {
+                    var checkbox = document.createElement("input");
+                    checkbox.setAttribute("type", "checkbox")
+                    checkbox.addEventListener("change", function () {
+                        var resultado = document.getElementById("resultado");
+                        if (this.checked) {
+                            sumatorio += parseInt(this.value);
+                        } else {
+                            sumatorio -= parseInt(this.value);
+                        }
+                        resultado.innerText = "La suma es: " + sumatorio ;
+                    });
+                    var label = document.createElement("label");
+                    var rand = Math.floor(Math.random() * (100 - 1)) + 1;
+                    checkbox.value = rand
+                    label.innerText = rand;
+                    contenedor.appendChild(checkbox);
+                    contenedor.appendChild(label);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1> Sumar botones  </h1>
+    <h1 style="color:fuchsia;" id="resultado"></h1>
+    <input type="range" min="1" max="10" id="range"/> <label id="rangeVal"></label>
+    <div id="contenedorChk"></div>
+</body>
+</html>

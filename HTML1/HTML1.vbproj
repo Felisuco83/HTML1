@@ -93,8 +93,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Cadenas1.html" />
+    <Content Include="calculadora.html" />
     <Content Include="cambiarImagenesDelegado.html" />
     <Content Include="Collatz.html" />
+    <Content Include="creacionCheckBoxes.html" />
     <Content Include="eventosDelegados.html" />
     <Content Include="sumarBotones.html" />
     <Content Include="validarDNI.html" />
